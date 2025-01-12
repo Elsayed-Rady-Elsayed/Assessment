@@ -1,0 +1,6 @@
+{
+  "part1_title": "Part 1",
+  "part2_title": "Part 2",
+  "part3_title": "Part 3",
+  "description_part1": "Utilize the provided Strapi Api from the assessment to post user data into your redux store..."
+}

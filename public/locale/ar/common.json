@@ -1,0 +1,6 @@
+{
+  "part1_title": "الجزء 1",
+  "part2_title": "الجزء 2",
+  "part3_title": "الجزء 3",
+  "description_part1": "استخدم API Strapi المقدم من التقييم لنشر بيانات المستخدم في مخزن Redux الخاص بك..."
+}
