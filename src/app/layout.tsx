@@ -3,14 +3,25 @@
 import { Providers } from "./provider";
 import "./globals.css";
 import Navbar from "./componants/navbar/navbar";
-import Form from "./form/page";
-import Table from "./users/page";
-import Map from "./componants/map/map";
-import TextEditor from "./componants/texteditor/texteditor";
+// import Form from "./form/page";
+// import Table from "./users/page";
+// import Map from "./componants/map/map";
+// import TextEditor from "./componants/texteditor/texteditor";
 import i18next from "i18next";
 import { useState } from "react";
 
-
+const Form = dynamic(() => import('./form/page'), {
+  ssr: false,
+});
+const Table = dynamic(() => import('./users/page'), {
+  ssr: false,
+});
+const Map = dynamic(() => import('./location/page'), {
+  ssr: false,
+});
+const TextEditor = dynamic(() => import('./texteditor/page'), {
+  ssr: false,
+});
 i18next.init({
   lng: "en",
   debug: true,
