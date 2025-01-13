@@ -8,5 +8,4 @@ module.exports = {
   images: {
     domains: ['digiflyeg.com', 'imgs.search.brave.com'], 
   },
-  
 };
