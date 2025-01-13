@@ -9,6 +9,7 @@ import Navbar from "./componants/navbar/navbar";
 // import TextEditor from "./componants/texteditor/texteditor";
 import i18next from "i18next";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
 const Form = dynamic(() => import('./form/page'), {
   ssr: false,
