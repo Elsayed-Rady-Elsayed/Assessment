@@ -1,7 +1,6 @@
 'use client';
 
 import { Providers } from "./provider";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./componants/navbar/navbar";
 import Form from "./form/page";
@@ -10,16 +9,6 @@ import Map from "./componants/map/map";
 import TextEditor from "./componants/texteditor/texteditor";
 import i18next from "i18next";
 import { useState } from "react";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 
 i18next.init({
@@ -81,7 +70,7 @@ function RootLayout() {
   };
   return (
     <html>
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`} dir={language === "en" ? "ltr" : "rtl"}>
+    <body className={`antialiased bg-white text-black`} dir={language === "en" ? "ltr" : "rtl"}>
     <Providers>
     <Navbar language={language} changeLang={changeLang} />
     <div className={`part1 mb-24 mt-[5%] container m-auto w-full`}>

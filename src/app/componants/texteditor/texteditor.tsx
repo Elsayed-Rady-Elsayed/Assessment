@@ -53,6 +53,9 @@ const TextEditor = () => {
   };
 
   const handleUnderline = () => {
+    if(typeof window==="undefined"){
+      return;
+    }
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
@@ -63,6 +66,9 @@ const TextEditor = () => {
   };
 
   const handleMarkText = () => {
+    if(typeof window==="undefined"){
+      return;
+    }
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
@@ -73,6 +79,9 @@ const TextEditor = () => {
   };
 
   const handleBold = () => {
+    if(typeof window==="undefined"){
+      return;
+    }
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       document.execCommand("bold");
@@ -80,6 +89,9 @@ const TextEditor = () => {
   };
 
   const handleItalic = () => {
+    if(typeof window==="undefined"){
+      return ;
+    }
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       document.execCommand("italic");
