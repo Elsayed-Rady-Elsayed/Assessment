@@ -1,8 +1,23 @@
-import 'react-i18next';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import HttpBackend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-declare module 'react-i18next' {
-  interface Resources {
-    en: typeof import('../public/locales/en/common.json');
-    ar: typeof import('../public/locales/ar/common.json');
-  }
-}
+i18n
+  .use(HttpBackend) // Load translations from public folder
+  .use(LanguageDetector) // Detect user's language
+  .use(initReactI18next) // Pass i18n instance to react-i18next
+  .init({
+    fallbackLng: 'en', // Default language
+    debug: process.env.NODE_ENV === 'development', // Debug mode in development
+    interpolation: {
+      escapeValue: false, // React already escapes content
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json', // Translation files path
+    },
+    ns: ['common'], // Default namespace
+    defaultNS: 'common',
+  });
+
+export default i18n;

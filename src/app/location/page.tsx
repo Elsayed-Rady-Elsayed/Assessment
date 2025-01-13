@@ -1,4 +1,4 @@
-import Map from "../componants/map";
+import Map from "../componants/map/map";
 
 const HomePage = () => {
   return (

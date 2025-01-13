@@ -3,6 +3,7 @@
 import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, RootState, AppDispatch } from "../store/store";
+import i18next from "i18next";
 
 interface UserData {
   FirstName: string;
@@ -12,8 +13,9 @@ interface UserData {
 }
 
 const Table: FC = () => {
-  const dispatch = useDispatch<AppDispatch>(); 
+  const dispatch = useDispatch<AppDispatch>();
   const { users, loading, error } = useSelector((state: RootState) => state.users);
+  const language = i18next.language;
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -29,13 +31,16 @@ const Table: FC = () => {
 
   return (
     <div className="overflow-x-auto shadow-md w-full">
-      <table className="min-w-full text-sm text-left text-gray-500">
+      <table
+        className="min-w-full text-sm text-left text-gray-500"
+        dir={language === "en" ? "ltr" : "rtl"}
+      >
         <thead className="text-[10px] bg-gray-100">
           <tr>
-            <th className="px-6 py-3">First Name</th>
-            <th className="px-6 py-3">Last Name</th>
-            <th className="px-6 py-3">Phone Number</th>
-            <th className="px-6 py-3">Email</th>
+            <th className="px-6 py-3">{i18next.t("firstName")}</th>
+            <th className="px-6 py-3">{i18next.t("lastName")}</th>
+            <th className="px-6 py-3">{i18next.t("phone")}</th>
+            <th className="px-6 py-3">{i18next.t("Email")}</th>
           </tr>
         </thead>
         <tbody>

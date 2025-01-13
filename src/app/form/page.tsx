@@ -1,6 +1,10 @@
 "use client"; 
-import { useState } from "react";
-const Form = () => {
+import i18next from "i18next";
+import { FC, useState } from "react";
+interface FormPros {
+  language: string;
+}
+const Form: FC<FormPros> = ({ language }) => {
   const [formData, setFormData] = useState({
     FirstName: "",
     LastName: "",
@@ -53,10 +57,10 @@ const Form = () => {
         <div className="flex gap-5">
           <div>
             <label htmlFor="firstName" className="block">
-              First Name
+            {i18next.t("firstName")}
             </label>
             <input
-              placeholder="First Name"
+              placeholder={i18next.t("firstName")}
               type="text"
               id="firstName"
               name="FirstName"
@@ -68,10 +72,10 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="lastName" className="block ">
-              Last Name
+            {i18next.t("lastName")}
             </label>
             <input
-              placeholder="Last Name"
+              placeholder={i18next.t("lastName")}
               type="text"
               id="lastName"
               name="LastName"
@@ -84,10 +88,10 @@ const Form = () => {
         </div>
         <div>
           <label htmlFor="phoneNumber" className="block ">
-            Phone Number
+          {i18next.t("phone")}
           </label>
           <input
-            placeholder="Phone Number"
+            placeholder={i18next.t("phone")}
             type="text"
             id="phoneNumber"
             name="Phone"
@@ -99,10 +103,10 @@ const Form = () => {
         </div>
         <div>
           <label htmlFor="email" className="block">
-            Email
+          {i18next.t("Email")}
           </label>
           <input
-            placeholder="Email"
+            placeholder={i18next.t("Email")}
             type="email"
             id="email"
             name="Email"
@@ -117,7 +121,7 @@ const Form = () => {
           type="submit"
           className="w-full py-2 px-4 bg-green-700 text-white rounded mt-4"
         >
-          Submit
+          {i18next.t("send")}
         </button>
       </form>
     </div>

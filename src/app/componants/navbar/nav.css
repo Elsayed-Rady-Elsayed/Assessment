@@ -1,0 +1,6 @@
+.enRow{
+    flex-direction: row !important;
+}
+.arRev{
+    flex-direction: row-reverse !important;
+}

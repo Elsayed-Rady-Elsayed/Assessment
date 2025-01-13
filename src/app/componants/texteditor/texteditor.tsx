@@ -95,7 +95,7 @@ const TextEditor = () => {
 
   return (
     <div className="border" >
-      <div className="flex p-2 items-center justify-between h-full gap-4">
+      <div className="flex p-2 flex-wrap items-center justify-between h-full gap-4">
         <button onClick={() => handleAlignment("left")}><RxTextAlignLeft /></button>
         <button onClick={() => handleAlignment("center")}><RxTextAlignCenter /></button>
         <button onClick={() => handleAlignment("right")}><RxTextAlignRight /></button>
