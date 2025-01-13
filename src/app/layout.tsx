@@ -1,7 +1,6 @@
 'use client';
 
 import { Providers } from "./provider";
-import { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./componants/navbar/navbar";
@@ -73,7 +72,7 @@ i18next.init({
   },
 });
 
-function RootLayout({ children }: { children: ReactNode }) {
+function RootLayout() {
   const [language, setLanguage] = useState(i18next.language);
   const changeLang = () => {
     const newLang = language === "en" ? "ar" : "en";
@@ -100,7 +99,7 @@ function RootLayout({ children }: { children: ReactNode }) {
         </p>
       </div>
       <div className="flex flex-col md:flex-row gap-10">
-        <Form language={language}/>
+        <Form />
         <Table />
       </div>
     </div>

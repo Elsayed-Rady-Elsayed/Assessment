@@ -1,10 +1,7 @@
 "use client"; 
 import i18next from "i18next";
 import { FC, useState } from "react";
-interface FormPros {
-  language: string;
-}
-const Form: FC<FormPros> = ({ language }) => {
+const Form:FC = ()=>{
   const [formData, setFormData] = useState({
     FirstName: "",
     LastName: "",

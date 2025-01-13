@@ -5,12 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, RootState, AppDispatch } from "../store/store";
 import i18next from "i18next";
 
-interface UserData {
-  FirstName: string;
-  LastName: string;
-  Phone: string;
-  Email: string;
-}
 
 const Table: FC = () => {
   const dispatch = useDispatch<AppDispatch>();

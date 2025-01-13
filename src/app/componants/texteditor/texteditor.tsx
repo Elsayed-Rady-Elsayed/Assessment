@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { FaRedo, FaUndo } from "react-icons/fa";
 import { GoItalic } from "react-icons/go";
 import { LuRedo, LuUndo } from "react-icons/lu";
 import { MdFormatBold, MdFormatUnderlined } from "react-icons/md";

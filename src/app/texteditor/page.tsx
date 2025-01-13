@@ -1,4 +1,3 @@
-import Map from "../componants/map/map";
 import TextEditor from "../componants/texteditor/texteditor";
 
 const HomePage = () => {

@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ language, changeLang }) => {
           </Link>
         </li>
       </ul>
-      <button onClick={changeLang} className={`flex items-center gap-1 ${i18next.language === "en" ? "enRow" : "arRev"}`}>
+      <button onClick={changeLang} className={`flex items-center gap-1 `}>
         <img
           src={
             language === "en"
